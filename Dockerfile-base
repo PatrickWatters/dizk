@@ -18,7 +18,9 @@ ENV SPARK_UI_PORT=8080
 
 # Download spark binaries
 RUN cd /tmp && \
-    wget https://apache.mirrors.nublue.co.uk/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+
+    wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+    #wget https://apache.mirrors.nublue.co.uk/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz --no-check-certificate
 
 # Install spark binaries to home directory (matching flintrock)
 RUN cd ~ && \
