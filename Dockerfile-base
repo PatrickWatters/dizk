@@ -16,6 +16,7 @@ ENV SPARK_HOME=/root/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
 ENV SPARK_MASTER_PORT=7077
 ENV SPARK_UI_PORT=8080
 
+
 # Download spark binaries
 RUN cd /tmp && \
 
