@@ -225,14 +225,13 @@ public class Profiler {
                 final SparkSession spark = SparkSession.builder().appName(SparkUtils.appName(app))
                         .getOrCreate();
                 spark.sparkContext().conf().set("spark.files.overwrite", "true");
-                spark.sparkContext().conf().set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
-                spark.sparkContext().conf().set("spark.kryo.registrationRequired", "false");
+                //spark.sparkContext().conf().set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
+                //spark.sparkContext().conf().set("spark.kryo.registrationRequired", "false");
 
-                spark.sparkContext().conf().registerKryoClasses(SparkUtils.zksparkClasses());
+                //spark.sparkContext().conf().registerKryoClasses(SparkUtils.zksparkClasses());
 
                 JavaSparkContext sc;
                 sc = new JavaSparkContext(spark.sparkContext());
-                sc.parallelize(List(1,2,3)).count();
 
                 final Configuration config = new Configuration(
                         numExecutors,
