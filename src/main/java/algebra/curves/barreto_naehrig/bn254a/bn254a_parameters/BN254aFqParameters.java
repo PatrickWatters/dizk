@@ -30,7 +30,15 @@ public class BN254aFqParameters extends AbstractBNFqParameters implements Serial
     public Fp ONE;
 
     public BN254aFqParameters() {
-        this.modulus = new BigInteger("21888242871839275222246405745257275088696311157297823662689037894645226208583");
+        
+        /* parameters for base field Fq 
+        modulus of bn128 curve's finite field (p)
+        P is a prime over which we form a basic field: 36u⁴+36u³+24u²+6u+1
+
+        https://github.com/clearmatics/bn256/blob/master/constants.go
+        */
+        
+        this.modulus = new BigInteger("21888242871839275222246405745257275088696311157297823662689037894645226208583"); //The prime modulus of the field i.e. p
         this.root = new BigInteger("21888242871839275222246405745257275088696311157297823662689037894645226208582");
         this.multiplicativeGenerator = new Fp("3", this);
         this.numBits = 254;

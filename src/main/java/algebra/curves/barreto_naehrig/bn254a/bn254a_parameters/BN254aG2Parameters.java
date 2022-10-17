@@ -16,12 +16,21 @@ import algebra.curves.barreto_naehrig.bn254a.BN254aG2;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+    /* choice of group G2 
+     * 
+     * -- | BN254 curve right group @G2 = E'(Fq2)@.
+    */
 
 public class BN254aG2Parameters
         extends AbstractBNG2Parameters<BN254aFr, BN254aFq, BN254aFq2, BN254aG2, BN254aG2Parameters>
         implements Serializable {
 
     public static final BN254aG2 ZERO = new BN254aG2(BN254aFq2.ZERO, BN254aFq2.ONE, BN254aFq2.ZERO);
+    
+    /*the paramaters here are x,y values, which make up the generator 
+     * 
+     * 
+    */
     public static final BN254aG2 ONE = new BN254aG2(
             new BN254aFq2(
                     new BN254aFq("10857046999023057135944570762232829481370756359578518086990519993285655852781"),
