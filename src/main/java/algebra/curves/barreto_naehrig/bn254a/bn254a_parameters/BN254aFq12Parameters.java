@@ -25,6 +25,7 @@ public class BN254aFq12Parameters extends AbstractBNFq12Parameters implements Se
     public Fp2 nonresidue;
 
     public Fp2[] FrobeniusCoefficientsC1;
+    /* parameters for Fq12 */
 
     public BN254aFq12Parameters() {
         this.FqParameters = new BN254aFqParameters();
@@ -39,6 +40,8 @@ public class BN254aFq12Parameters extends AbstractBNFq12Parameters implements Se
         this.FrobeniusCoefficientsC1 = new Fp2[12];
         this.FrobeniusCoefficientsC1[0] =
                 new Fp2(FqParameters.ONE(), FqParameters.ZERO(), Fq2Parameters);
+        //// xiToPMinus1Over6 is ξ^((p-1)/6) where ξ = i+9.
+        
         this.FrobeniusCoefficientsC1[1] = new Fp2(
                 new Fp(
                         "8376118865763821496583973867626364092589906065868298776909617916018768340080",
@@ -48,6 +51,7 @@ public class BN254aFq12Parameters extends AbstractBNFq12Parameters implements Se
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC1[2] = new Fp2(new Fp(
+                // xiToPSquaredMinus1Over6 is ξ^((1p²-1)/6) where ξ = i+9 (a cubic root of -1, mod p).
                 "21888242871839275220042445260109153167277707414472061641714758635765020556617",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC1[3] = new Fp2(
@@ -59,6 +63,7 @@ public class BN254aFq12Parameters extends AbstractBNFq12Parameters implements Se
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC1[4] = new Fp2(new Fp(
+                // xiToPSquaredMinus1Over3 is ξ^((p²-1)/3) where ξ = i+9.
                 "21888242871839275220042445260109153167277707414472061641714758635765020556616",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC1[5] = new Fp2(
@@ -81,6 +86,7 @@ public class BN254aFq12Parameters extends AbstractBNFq12Parameters implements Se
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC1[8] = new Fp2(new Fp(
+                // xiTo2PSquaredMinus2Over3 is ξ^((2p²-2)/3) where ξ = i+9 (a cubic root of unity, mod p).
                 "2203960485148121921418603742825762020974279258880205651966",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC1[9] = new Fp2(

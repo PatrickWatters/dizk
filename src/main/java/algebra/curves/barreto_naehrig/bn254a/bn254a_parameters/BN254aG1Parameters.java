@@ -19,6 +19,11 @@ import java.util.Arrays;
 public class BN254aG1Parameters
         extends AbstractBNG1Parameters<BN254aFr, BN254aFq, BN254aG1, BN254aG1Parameters>
         implements Serializable {
+    
+            /* choice of group G1 
+             * 
+             * BN254 curve left group @G1 = E(Fq)
+            */
 
     public static final BN254aG1 ZERO = new BN254aG1(BN254aFq.ZERO, BN254aFq.ONE, BN254aFq.ZERO);
     public static final BN254aG1 ONE = new BN254aG1(BN254aFq.ONE, new BN254aFq(2), BN254aFq.ONE);

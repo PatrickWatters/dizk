@@ -21,15 +21,21 @@ public class BN254aPublicParameters
 
     public BN254aPublicParameters() {
         final BN254aFq2Parameters Fq2Parameters = new BN254aFq2Parameters();
+        
+        /* choice of short Weierstrass curve and its twist */
 
         coefficientB = new BN254aFq("3");
         twist = new BN254aFq2(new BN254aFq("9"), new BN254aFq("1"));
         twistCoefficientB = twist.inverse().mul(coefficientB);
         bC0MulTwist = coefficientB.mul(new BN254aFq(Fq2Parameters.nonresidue()));
         bC1MulTwist = coefficientB.mul(new BN254aFq(Fq2Parameters.nonresidue()));
+
+        // xiToPMinus1Over3 is ξ^((p-1)/3) where ξ = i+9.
         qXMulTwist = new BN254aFq2(
                 new BN254aFq("21575463638280843010398324269430826099269044274347216827212613867836435027261"),
-                new BN254aFq("10307601595873709700152284273816112264069230130616436755625194854815875713954"));
+                new BN254aFq("10307601595873709700152284273816112264069230130616436755625194854815875713954"));//// xiToPMinus1Over3 is ξ^((p-1)/3) where ξ = i+9.
+
+        // xiToPMinus1Over2 is ξ^((p-1)/2) where ξ = i+9.
         qYMulTwist = new BN254aFq2(
                 new BN254aFq("2821565182194536844548159561693502659359617185244120367078079554186484126554"),
                 new BN254aFq("3505843767911556378687030309984248845540243509899259641013678093033130930403"));

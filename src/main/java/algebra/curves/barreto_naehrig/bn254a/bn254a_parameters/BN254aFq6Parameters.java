@@ -23,6 +23,10 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
     public Fp2 nonresidue;
     public Fp2[] FrobeniusCoefficientsC1;
     public Fp2[] FrobeniusCoefficientsC2;
+    /* parameters for Fq6. Field of points of BN254 curve ver @Fq6@ 
+     * 
+     * 
+    */
 
     public BN254aFq6Parameters() {
         final BN254aFqParameters FqParameters = new BN254aFqParameters();
@@ -40,11 +44,13 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
         this.FrobeniusCoefficientsC1[1] = new Fp2(
                 new Fp("21575463638280843010398324269430826099269044274347216827212613867836435027261",
                         FqParameters),
+                        //// xiToPMinus1Over3 is ξ^((p-1)/3) where ξ = i+9.
                 new Fp("10307601595873709700152284273816112264069230130616436755625194854815875713954",
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC1[2] = new Fp2(
                 new Fp(
+                        // xiToPSquaredMinus1Over3 is ξ^((p²-1)/3) where ξ = i+9.
                         "21888242871839275220042445260109153167277707414472061641714758635765020556616",
                         FqParameters),
                 new Fp("0", FqParameters), Fq2Parameters);
@@ -57,6 +63,7 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC1[4] = new Fp2(new Fp(
+                // xiTo2PSquaredMinus2Over3 is ξ^((2p²-2)/3) where ξ = i+9 (a cubic root of unity, mod p).
                 "2203960485148121921418603742825762020974279258880205651966",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC1[5] = new Fp2(
@@ -72,6 +79,7 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
         this.FrobeniusCoefficientsC2[0] = new Fp2(
                 FqParameters.ONE(), FqParameters.ZERO(), Fq2Parameters);
         this.FrobeniusCoefficientsC2[1] = new Fp2(
+                // xiTo2PMinus2Over3 is ξ^((2p-2)/3) where ξ = i+9.
                 new Fp(
                         "2581911344467009335267311115468803099551665605076196740867805258568234346338",
                         FqParameters),
@@ -80,6 +88,7 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC2[2] = new Fp2(new Fp(
+                // xiTo2PSquaredMinus2Over3 is ξ^((2p²-2)/3) where ξ = i+9 (a cubic root of unity, mod p).
                 "2203960485148121921418603742825762020974279258880205651966",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC2[3] = new Fp2(
@@ -91,6 +100,7 @@ public class BN254aFq6Parameters extends AbstractBNFq6Parameters implements Seri
                         FqParameters),
                 Fq2Parameters);
         this.FrobeniusCoefficientsC2[4] = new Fp2(new Fp(
+                // xiToPSquaredMinus1Over3 is ξ^((p²-1)/3) where ξ = i+9.
                 "21888242871839275220042445260109153167277707414472061641714758635765020556616",
                 FqParameters), new Fp("0", FqParameters), Fq2Parameters);
         this.FrobeniusCoefficientsC2[5] = new Fp2(
