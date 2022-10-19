@@ -7,11 +7,13 @@ import common.Utils;
 import configuration.Configuration;
 import org.apache.spark.api.java.JavaPairRDD;
 import scala.Tuple2;
+import algebra.curves.barreto_naehrig.bn254a.BN254aFields.BN254aFr;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.math.BigInteger;
 
 public class FFTAuxiliary {
 
@@ -22,6 +24,12 @@ public class FFTAuxiliary {
     static <FieldT extends AbstractFieldElementExpanded<FieldT>> void serialRadix2FFT(
             final List<FieldT> input,
             final FieldT omega) {
+
+        //BigInteger i = new BigInteger("09c532c6306b93d29678200d47c0b2a99c18d51b838eeb1d3eed4c533bb512d0",16);
+        //System.out.println(i);
+        //BN254aFr omegai = new BN254aFr(i);         
+
+        
         final int n = input.size();
         final int logn = MathUtils.log2(n);
         if (n == 1) {
@@ -53,6 +61,13 @@ public class FFTAuxiliary {
                 }
             }
             m *= 2;
+        }
+
+        for (FieldT o : input)
+        {
+            //o.toBigInteger();
+            System.out.println(o.toString());
+
         }
     }
 

@@ -52,12 +52,13 @@ public class BN254aFrParameters extends AbstractBNFrParameters implements Serial
 
 
         this.root = new BigInteger("19103219067921713944291392827692070036145651957329286315305642004821462161904"); //root of unity
-        this.multiplicativeGenerator = new Fp("5", this); //generator G
-        this.numBits = 254;
+        this.multiplicativeGenerator = new Fp("7", this); //generator G
+        this.numBits = 256;
 
         //omega=power_mod(root,2^(28-11),p)
-        
         this.euler = new BigInteger("10944121435919637611123202872628637544274182200208017171849102093287904247808");
+        //this.euler = new BigInteger("4419234939496763621076330863786513495701855246241724391626358375488475697872");
+
         this.s = 28;
         this.t = new BigInteger("81540058820840996586704275553141814055101440848469862132140264610111");
         this.tMinus1Over2 = new BigInteger("40770029410420498293352137776570907027550720424234931066070132305055");

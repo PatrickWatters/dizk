@@ -111,6 +111,10 @@ public class Profiler {
     }
 
     public static void main(String[] args) {
+
+        FFTProfiling.test_fft_with_input();
+
+        /* 
         if (args.length > 0) {
             String input = args[0].toLowerCase();
             if (input.equals("matmul") || input.equals("matmul_full")) {
@@ -282,7 +286,10 @@ public class Profiler {
                     sc,
                     StorageLevel.MEMORY_AND_DISK_SER());
             distributedApp(app, config, size);
+            
         }
+
+        */ 
     }
 
 }

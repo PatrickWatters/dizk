@@ -40,8 +40,8 @@ public class BN254aFqParameters extends AbstractBNFqParameters implements Serial
         
         this.modulus = new BigInteger("21888242871839275222246405745257275088696311157297823662689037894645226208583"); //The prime modulus of the field i.e. p
         this.root = new BigInteger("21888242871839275222246405745257275088696311157297823662689037894645226208582");
-        this.multiplicativeGenerator = new Fp("3", this);
-        this.numBits = 254;
+        this.multiplicativeGenerator = new Fp("2", this);
+        this.numBits = 256;
 
         this.euler = new BigInteger("10944121435919637611123202872628637544348155578648911831344518947322613104291");
         this.s = 1;
